@@ -16,7 +16,7 @@ const ModalCategory: React.FC<ModalCategoryProps> = ({ toggleModal }) => {
   const { lang } = React.useContext(PreferencesContext);
 
   React.useEffect(() => {
-    fetch(`https://ryu-no-kinu-back-production.up.railway.app/api/categories?lang=${lang}`)
+    fetch(`http://localhost:8888/categories?lang=${lang}`)
       .then(res => res.json())
       .then(data => setCategories(data))
       .catch(err => console.log('Error loading categories:', err));
