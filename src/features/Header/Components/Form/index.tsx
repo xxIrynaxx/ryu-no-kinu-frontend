@@ -31,8 +31,8 @@ const Form: React.FC<FormProps> = ({
     setError('');
 
     const url = isLoginMode
-      ? 'ryu-no-kinu-back-production.up.railway.app/api/auth/login'
-      : 'ryu-no-kinu-back-production.up.railway.app/api/auth/register';
+      ? 'https://ryu-no-kinu-back-production.up.railway.app/api/auth/login'
+      : 'https://ryu-no-kinu-back-production.up.railway.app/api/auth/register';
 
     const payload = isLoginMode ? { email, password } : { username, email, password };
 

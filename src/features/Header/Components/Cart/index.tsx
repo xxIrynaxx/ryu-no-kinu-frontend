@@ -30,7 +30,7 @@ const Cart: React.FC<CartProps> = ({ toggleModalCart, cartItems, setCartItems })
     const response = await Promise.all(
       cart.map(item =>
         fetch(
-          `ryu-no-kinu-back-production.up.railway.app/api/products/${item.productId}?lang=${lang}`,
+          `https://ryu-no-kinu-back-production.up.railway.app/api/products/${item.productId}?lang=${lang}`,
         ),
       ),
     );

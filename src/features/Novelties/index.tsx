@@ -13,7 +13,7 @@ const Novelties = () => {
   const { lang } = React.useContext(PreferencesContext);
 
   React.useEffect(() => {
-    fetch(`ryu-no-kinu-back-production.up.railway.app/api/products/latest?lang=${lang}`)
+    fetch(`https://ryu-no-kinu-back-production.up.railway.app/api/products/latest?lang=${lang}`)
       .then(res => {
         if (!res.ok) throw new Error('Ошибка загрузки товаров');
         return res.json();

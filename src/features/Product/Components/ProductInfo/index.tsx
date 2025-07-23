@@ -15,7 +15,7 @@ const ProductInfo: React.FC = () => {
 
   React.useEffect(() => {
     if (!id) return;
-    fetch(`ryu-no-kinu-back-production.up.railway.app/api/products/${id}?lang=${lang}`)
+    fetch(`https://ryu-no-kinu-back-production.up.railway.app/api/products/${id}?lang=${lang}`)
       .then(res => res.json())
       .then(data => setProduct(data))
       .catch(err => console.error('Error fetching product:', err));

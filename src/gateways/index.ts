@@ -1,14 +1,17 @@
 import { CartItem, Lang, Product, Theme } from '@/types';
 
 export async function updateUserLang(lang: Lang, token: string) {
-  const response = await fetch('ryu-no-kinu-back-production.up.railway.app/api/users/lang', {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
+  const response = await fetch(
+    'https://ryu-no-kinu-back-production.up.railway.app/api/users/lang',
+    {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(lang),
     },
-    body: JSON.stringify(lang),
-  });
+  );
 
   if (!response.ok) {
     throw new Error(`Помилка: ${response.status}`);
@@ -18,14 +21,17 @@ export async function updateUserLang(lang: Lang, token: string) {
 }
 
 export async function updateUserTheme(theme: Theme, token: string) {
-  const response = await fetch('ryu-no-kinu-back-production.up.railway.app/api/users/theme', {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
+  const response = await fetch(
+    'https://ryu-no-kinu-back-production.up.railway.app/api/users/theme',
+    {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(theme),
     },
-    body: JSON.stringify(theme),
-  });
+  );
 
   if (!response.ok) {
     throw new Error(`Помилка: ${response.status}`);
@@ -35,7 +41,7 @@ export async function updateUserTheme(theme: Theme, token: string) {
 }
 
 export async function deleteUser(token: string) {
-  const response = await fetch('ryu-no-kinu-back-production.up.railway.app/api/users/me', {
+  const response = await fetch('https://ryu-no-kinu-back-production.up.railway.app/api/users/me', {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -50,7 +56,7 @@ export async function deleteUser(token: string) {
 }
 
 export async function updateUserProfile(formData: FormData, token: string) {
-  const response = await fetch('ryu-no-kinu-back-production.up.railway.app/api/users/me', {
+  const response = await fetch('https://ryu-no-kinu-back-production.up.railway.app/api/users/me', {
     method: 'PUT',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -66,7 +72,7 @@ export async function updateUserProfile(formData: FormData, token: string) {
 }
 
 export async function fetchUserProfile(token: string) {
-  const response = await fetch('ryu-no-kinu-back-production.up.railway.app/api/users/me', {
+  const response = await fetch('https://ryu-no-kinu-back-production.up.railway.app/api/users/me', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -84,7 +90,7 @@ export async function fetchUserProfile(token: string) {
 
 export const addToWishList = async (productId: string, token: string) => {
   const response = await fetch(
-    `ryu-no-kinu-back-production.up.railway.app/api/wishlist/${productId}`,
+    `https://ryu-no-kinu-back-production.up.railway.app/api/wishlist/${productId}`,
     {
       method: 'POST',
       headers: {
@@ -105,14 +111,17 @@ export const addToCart = async (productId: string, size: string) => {
   const token = localStorage.getItem('token');
 
   if (token) {
-    const res = await fetch(`ryu-no-kinu-back-production.up.railway.app/api/cart/${productId}`, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
+    const res = await fetch(
+      `https://ryu-no-kinu-back-production.up.railway.app/api/cart/${productId}`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ productId, size, quantity: 1 }),
       },
-      body: JSON.stringify({ productId, size, quantity: 1 }),
-    });
+    );
 
     if (!res.ok) {
       console.error(`Error: ${res.statusText}`);
@@ -140,13 +149,16 @@ export const removeFromWishlist = async (productId: string) => {
     throw new Error('No token');
   }
 
-  const res = await fetch(`ryu-no-kinu-back-production.up.railway.app/api/wishlist/${productId}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
+  const res = await fetch(
+    `https://ryu-no-kinu-back-production.up.railway.app/api/wishlist/${productId}`,
+    {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   if (!res.ok) {
     console.error(`Error: ${res.statusText}`);
@@ -157,7 +169,7 @@ export const removeFromWishlist = async (productId: string) => {
 };
 
 export const getWishlist = async (token: string): Promise<Product[]> => {
-  const response = await fetch(`ryu-no-kinu-back-production.up.railway.app/api/wishlist`, {
+  const response = await fetch(`https://ryu-no-kinu-back-production.up.railway.app/api/wishlist`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,

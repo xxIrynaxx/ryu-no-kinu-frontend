@@ -21,7 +21,7 @@ const SearchBar = () => {
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       fetch(
-        `ryu-no-kinu-back-production.up.railway.app/api/products/search?query=${encodeURIComponent(query)}&lang=${lang}`,
+        `https://ryu-no-kinu-back-production.up.railway.app/api/products/search?query=${encodeURIComponent(query)}&lang=${lang}`,
       )
         .then(res => {
           if (!res.ok) {

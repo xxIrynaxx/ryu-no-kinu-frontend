@@ -13,7 +13,7 @@ const WishListContent = () => {
         const lang = localStorage.getItem('lang') || 'uk';
 
         const res = await fetch(
-          `ryu-no-kinu-back-production.up.railway.app/api/users/me/products?lang=${lang}`,
+          `https://ryu-no-kinu-back-production.up.railway.app/api/users/me/products?lang=${lang}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -37,7 +37,7 @@ const WishListContent = () => {
     try {
       const token = localStorage.getItem('token');
 
-      await fetch(`ryu-no-kinu-back-production.up.railway.app/api/wishlist/${productId}`, {
+      await fetch(`https://ryu-no-kinu-back-production.up.railway.app/api/wishlist/${productId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

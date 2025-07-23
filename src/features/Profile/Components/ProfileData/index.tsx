@@ -21,7 +21,7 @@ const ProfileData: React.FC<ProfileDataProps> = ({ handleLogout, user }) => {
             user?.avatar
               ? user.avatar.startsWith('http://') || user.avatar.startsWith('https://')
                 ? user.avatar
-                : `ryu-no-kinu-back-production.up.railway.app${user.avatar}`
+                : `https://ryu-no-kinu-back-production.up.railway.app${user.avatar}`
               : ''
           }
           alt=""

@@ -28,11 +28,11 @@ const ProductListPage: React.FC = () => {
     let url = '';
 
     if (searchQuery) {
-      url = `ryu-no-kinu-back-production.up.railway.app/api/products/search?query=${encodeURIComponent(searchQuery)}&lang=${lang}`;
+      url = `https://ryu-no-kinu-back-production.up.railway.app/api/products/search?query=${encodeURIComponent(searchQuery)}&lang=${lang}`;
     } else {
       url = categoryId
-        ? `ryu-no-kinu-back-production.up.railway.app/api/products/category/${categoryId}?lang=${lang}`
-        : `ryu-no-kinu-back-production.up.railway.app/api/products?lang=${lang}`;
+        ? `https://ryu-no-kinu-back-production.up.railway.app/api/products/category/${categoryId}?lang=${lang}`
+        : `https://ryu-no-kinu-back-production.up.railway.app/api/products?lang=${lang}`;
     }
 
     fetch(url)
