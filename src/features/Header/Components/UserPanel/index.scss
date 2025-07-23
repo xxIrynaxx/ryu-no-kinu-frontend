@@ -1,0 +1,133 @@
+@use './../../../../styles/breakpoints.scss' as *;
+
+.user-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  @include for-desktop {
+    display: none;
+  }
+
+  @include for-tablet {
+    display: none;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    &__cart-icon {
+      position: relative;
+      width: 35px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        display: block;
+        position: relative;
+      }
+    }
+  }
+
+  &__cart-quant {
+    position: absolute;
+    top: 20%;
+    left: 73%;
+    transform: translateX(-72%);
+    background-color: #e8aa31;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+}
+
+.icon path {
+  transition: fill 0.9s ease;
+}
+
+.wrapper:hover .icon path {
+  fill: url(#gradient);
+}
+
+.wrapper:hover .icon rect {
+  fill: url(#gradient);
+}
+
+.user-panel-desk {
+  display: none;
+
+  @include for-desktop {
+    display: flex;
+    align-items: center;
+  }
+
+  @include for-tablet {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+
+  &__cart-icon {
+    position: relative;
+    width: 35px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      display: block;
+      position: relative;
+    }
+  }
+
+  &__cart-quant {
+    position: absolute;
+    top: 0;
+    left: 89%;
+    transform: translateX(-72%);
+    background-color: #e8aa31;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  &__item-title {
+    margin-left: 12px;
+    width: 89px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    line-height: 16px;
+    color: #fff;
+
+    @include for-tablet {
+      display: none;
+    }
+  }
+}

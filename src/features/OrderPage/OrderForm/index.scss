@@ -1,0 +1,68 @@
+.order {
+  position: relative;
+  background-color: #141414;
+  box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 100px;
+    background-color: #141414;
+    max-width: 600px;
+    margin: 0 auto;
+
+    &__title {
+      margin-bottom: 40px;
+      font-size: 36px;
+      line-height: 36px;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      text-align: center;
+    }
+
+    &__name {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+    }
+
+    &__label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    &__input {
+      padding: 8px;
+      border-radius: 8px;
+      border: none;
+      min-width: 200px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: linear-gradient(180deg, #ee8236, #ff1a1e);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        background: linear-gradient(180deg, #4b2911, #270a0a);
+      }
+    }
+  }
+}

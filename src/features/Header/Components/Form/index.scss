@@ -1,0 +1,259 @@
+@use './../../../../styles/breakpoints.scss' as *;
+
+.form-modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    background-color: #141414;
+    padding: 0 28px;
+    height: 100%;
+    min-width: 69%;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: height 0.6s ease;
+
+    @include for-desktop {
+      margin-top: 240px;
+      padding: 0 60px;
+      min-width: 0;
+    }
+
+    @include for-tablet {
+      margin-top: 168px;
+      padding: 0 28px;
+      min-width: 300px;
+    }
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__tabs {
+    display: flex;
+  }
+
+  &__title {
+    margin-top: 28px;
+    flex: 1;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+
+    @include for-desktop {
+      margin-top: 32px;
+      font-size: 28px;
+      line-height: 32px;
+    }
+
+    @include for-tablet {
+      margin-top: 28px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    h2:hover {
+      background: linear-gradient(90deg, #ee8236 0%, #ff1a1e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include for-desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    @include for-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__avatar {
+    display: none;
+
+    @include for-desktop {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    @include for-tablet {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
+
+  &__hero {
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #8d8d8d40;
+  backdrop-filter: blur(4px);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__label {
+    margin-top: 18px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+
+    background: linear-gradient(180deg, #ee8236 0%, #ff1a1e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include for-desktop {
+      margin-top: 24px;
+      font-size: 16px;
+    }
+
+    @include for-tablet {
+      margin-top: 24px;
+      font-size: 15px;
+    }
+
+    &:first-child {
+      margin-top: 28px;
+
+      @include for-desktop {
+        margin-top: 32px;
+      }
+
+      @include for-tablet {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__input {
+    margin: 0;
+    padding: 0;
+    padding: 10px 0 10px 10px;
+    margin-top: 8px;
+    border-radius: 8px;
+
+    @include for-desktop {
+      margin-top: 12px;
+      min-width: 250px;
+    }
+
+    @include for-tablet {
+      margin-top: 4px;
+      min-width: 250px;
+    }
+
+    &::placeholder {
+      font-size: 13px;
+      line-height: 16px;
+      color: #767676;
+
+      @include for-desktop {
+        font-size: 14px;
+      }
+
+      @include for-tablet {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__error {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #f1fed2;
+
+    @include for-desktop {
+      margin-top: 4px;
+      font-size: 14px;
+    }
+
+    @include for-tablet {
+      margin-top: 4px;
+      font-size: 14px;
+    }
+  }
+
+  &__button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 13px 40px;
+    border-radius: 16px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(180deg, #ee8236 0%, #ff1a1e 100%);
+    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
+    border: none;
+
+    @include for-desktop {
+      margin-top: 20px;
+    }
+  }
+}
+
+.active {
+  position: relative;
+  display: inline-block;
+
+  background: linear-gradient(180deg, #ee8236 0%, #ff1a1e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, #ee8236, #ff1a1e);
+}
+
+.login {
+  height: 40vh;
+}
+
+.regis {
+  height: 50vh;
+}

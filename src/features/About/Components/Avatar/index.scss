@@ -1,0 +1,155 @@
+@use './../../../../styles//breakpoints.scss' as *;
+
+.avatar {
+  position: relative;
+  width: 75vw;
+  aspect-ratio: 254 / 359;
+  margin: 0 auto;
+  z-index: 1;
+
+  @include for-desktop {
+    aspect-ratio: 353 / 499;
+  }
+
+  @include for-tablet {
+    width: 50vw;
+    aspect-ratio: 422 / 596;
+  }
+
+  &__red_light {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #714cf8;
+    left: 10vw;
+    bottom: 20vh;
+    filter: blur(150px);
+
+    @include for-desktop {
+      width: 250px;
+      height: 250px;
+      filter: blur(200px);
+      left: 15vw;
+      bottom: 20vh;
+    }
+  }
+
+  &__red_dark {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #ff1a1e;
+    left: 10vw;
+    bottom: 20vh;
+    filter: blur(150px);
+
+    @include for-desktop {
+      width: 250px;
+      height: 250px;
+      filter: blur(200px);
+      left: 15vw;
+      bottom: 20vh;
+    }
+  }
+
+  &__orange_dark {
+    position: absolute;
+    inset: 0;
+
+    &_light {
+      background-color: #ff26b7;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background-color: #ee8236;
+      filter: blur(22px);
+
+      @include for-desktop {
+        width: 100px;
+        height: 100px;
+        filter: blur(38px);
+      }
+    }
+
+    &::before {
+      left: 70%;
+      top: 10%;
+
+      @include for-desktop {
+        left: 62%;
+        top: 16%;
+      }
+    }
+
+    &::after {
+      left: 5%;
+      top: 60%;
+
+      @include for-desktop {
+        left: 22%;
+        top: 55%;
+      }
+    }
+  }
+
+  &__orange_light {
+    position: absolute;
+    inset: 0;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background-color: #ff26b7;
+      filter: blur(22px);
+
+      @include for-desktop {
+        width: 100px;
+        height: 100px;
+        filter: blur(38px);
+      }
+    }
+
+    &::before {
+      left: 70%;
+      top: 10%;
+
+      @include for-desktop {
+        left: 62%;
+        top: 16%;
+      }
+    }
+
+    &::after {
+      left: 5%;
+      top: 60%;
+
+      @include for-desktop {
+        left: 22%;
+        top: 55%;
+      }
+    }
+  }
+
+  &__hero {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+}

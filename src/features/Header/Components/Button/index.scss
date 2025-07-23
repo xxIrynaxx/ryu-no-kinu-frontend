@@ -1,0 +1,24 @@
+@use './../../../../styles/breakpoints.scss' as *;
+
+.btn {
+  display: none;
+
+  @include for-desktop {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    line-height: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
+    background: linear-gradient(180deg, #ee8236 0%, #ff1a1e 100%);
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__image {
+    margin-left: 12px;
+  }
+}

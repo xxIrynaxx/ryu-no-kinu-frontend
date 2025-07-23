@@ -1,0 +1,79 @@
+@use './../../../../styles/breakpoints.scss' as *;
+
+.my-profile {
+  padding: 20px 60px 0;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    line-height: 36px;
+    color: #fff;
+  }
+
+  &__social-data {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+  }
+
+  &__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    background-image: linear-gradient(90deg, #ff8a00, #e52e71);
+  }
+
+  &__name {
+    margin-left: 28px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32px;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+  }
+
+  &__personal-data,
+  &__logout {
+    margin-top: 40px;
+    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    line-height: 32px;
+    color: #fff;
+  }
+
+  &__email {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    &-title {
+      color: #fff;
+    }
+
+    &-field {
+      margin-left: 24px;
+      padding: 8px 20px 8px 10px;
+      min-width: 15vw;
+      border-radius: 16px;
+      background-color: #fff;
+    }
+  }
+
+  &__logout-btn {
+    margin: 24px 0 32px 0;
+    padding: 8px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    line-height: 24px;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
+    background: linear-gradient(180deg, #ee8236 0%, #ff1a1e 100%);
+    color: #fff;
+  }
+}

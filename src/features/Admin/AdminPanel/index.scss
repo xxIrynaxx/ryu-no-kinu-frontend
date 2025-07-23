@@ -1,0 +1,86 @@
+@use './../../../styles/breakpoints.scss' as *;
+
+.admin-profile {
+  @include for-desktop {
+    position: relative;
+    display: flex;
+    padding: 30px 100px 0;
+    background-color: #141414;
+    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
+  }
+
+  &__panel {
+    @include for-desktop {
+      position: relative;
+      width: 28vw;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: #ffffff50;
+    filter: blur(2px);
+    right: 0;
+    top: -15px;
+  }
+
+  &__list {
+    @include for-desktop {
+      list-style: none;
+      list-style-type: none;
+    }
+  }
+
+  &__link {
+    @include for-desktop {
+      position: relative;
+      margin-left: 32px;
+      margin-bottom: 28px;
+      border: none;
+      background-color: #141414;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 600;
+      color: #fff;
+      transition: 0.6s ease;
+    }
+    &:hover {
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      margin-top: 4px;
+      left: 0;
+      bottom: 0px;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      transition: width 0.6s ease;
+    }
+
+    &:hover::after {
+      width: 250px;
+    }
+  }
+}
+
+.active {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  &::after {
+    width: 100%;
+  }
+}

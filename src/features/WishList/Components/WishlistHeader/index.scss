@@ -1,0 +1,92 @@
+@use './../../../../styles/breakpoints.scss' as *;
+
+.wishlist-header {
+  padding: 60px 100px 36px 100px;
+  background-color: #141414;
+
+  &__home {
+    margin-bottom: 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.6s ease;
+
+    &:hover {
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__block {
+    border-radius: 8px;
+    border: 1px solid #3d3d3d;
+  }
+
+  &__title {
+    margin: 8px 0 0 20px;
+    font-size: 36px;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    line-height: 36px;
+    color: #fff;
+  }
+
+  &__tabs {
+    display: flex;
+    margin: 24px 0 0 38px;
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 36px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #fff;
+    transition: 0.6s ease;
+
+    &:hover {
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      margin-top: 4px;
+      left: 0;
+      bottom: -4px;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      transition: width 0.6s ease;
+    }
+
+    &:hover::after {
+      bottom: -4px;
+      width: 100%;
+    }
+  }
+}
+
+.active {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  &:after {
+    bottom: -4px;
+    width: 100%;
+  }
+}

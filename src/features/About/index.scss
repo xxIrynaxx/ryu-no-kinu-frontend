@@ -1,0 +1,29 @@
+@use './../../styles/breakpoints.scss' as *;
+
+.about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 718px;
+  overflow: hidden;
+  z-index: 8;
+
+  &_light {
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &_dark {
+    background-color: #141414;
+    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
+  }
+
+  @include for-desktop {
+    flex-direction: row;
+    height: 450px;
+  }
+
+  @include for-tablet {
+    height: 800px;
+  }
+}

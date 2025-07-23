@@ -1,0 +1,121 @@
+@use './../../../../styles/breakpoints.scss' as *;
+
+.textblock {
+  padding: 20px 40px 0 40px;
+  margin-bottom: auto;
+
+  @include for-desktop {
+    padding: 120px 0 0 100px;
+    max-width: 543px;
+  }
+
+  @include for-tablet {
+    padding: 80px 67px 0 67px;
+  }
+
+  &__title_light {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    font-family: 'Playfair Display', serif;
+    color: #3a3a3a;
+
+    @include for-desktop {
+      font-size: 32px;
+      line-height: 28px;
+    }
+
+    @include for-tablet {
+      font-size: 36px;
+      line-height: 28px;
+      text-align: center;
+    }
+  }
+
+  &__title_dark {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+
+    @include for-desktop {
+      font-size: 32px;
+      line-height: 28px;
+    }
+
+    @include for-tablet {
+      font-size: 36px;
+      line-height: 28px;
+      text-align: center;
+    }
+  }
+
+  &__quote_dark {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.5);
+
+    @include for-desktop {
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    @include for-tablet {
+      margin-top: 16px;
+      text-align: center;
+    }
+  }
+
+  &__quote_light {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(58, 58, 58, 0.5);
+
+    @include for-desktop {
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    @include for-tablet {
+      margin-top: 16px;
+      text-align: center;
+    }
+  }
+
+  &__text_dark {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.7);
+
+    @include for-desktop {
+      margin-top: 36px;
+      text-align: center;
+    }
+
+    @include for-tablet {
+      margin-top: 28px;
+      text-align: center;
+    }
+  }
+
+  &__text_light {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(58, 58, 58, 0.7);
+
+    @include for-desktop {
+      margin-top: 36px;
+      text-align: center;
+    }
+
+    @include for-tablet {
+      margin-top: 28px;
+      text-align: center;
+    }
+  }
+}

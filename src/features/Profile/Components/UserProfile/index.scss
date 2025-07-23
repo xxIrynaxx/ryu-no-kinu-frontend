@@ -1,0 +1,112 @@
+@use './../../../../styles/breakpoints.scss' as *;
+
+.user-profile {
+  position: relative;
+  display: flex;
+  padding: 30px 20px;
+  background-color: #141414;
+  box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
+
+  @include for-desktop {
+    padding: 30px 100px 0;
+  }
+
+  &__panel {
+    position: relative;
+    min-width: 120px;
+
+    @include for-tablet {
+      min-width: 200px;
+    }
+
+    @include for-desktop {
+      width: 20vw;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: #ffffff50;
+    filter: blur(2px);
+    right: 0;
+    top: -15px;
+  }
+
+  &__list {
+    list-style: none;
+    list-style-type: none;
+  }
+
+  &__link {
+    position: relative;
+    margin-bottom: 28px;
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.6s ease;
+
+    @include for-desktop {
+      margin-left: 32px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include for-tablet {
+      margin-left: 32px;
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    &:hover {
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      margin-top: 4px;
+      left: 0;
+      bottom: 0px;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      transition: width 0.6s ease;
+    }
+
+    &:hover::after {
+      bottom: -4px;
+      width: 100%;
+
+      @include for-desktop {
+        width: 160px;
+      }
+    }
+  }
+}
+
+.active {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  &::after {
+    bottom: -4px;
+    width: 100%;
+
+    @include for-desktop {
+      width: 160px;
+    }
+  }
+}

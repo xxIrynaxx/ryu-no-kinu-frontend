@@ -1,0 +1,43 @@
+@use './../../styles/breakpoints.scss' as *;
+
+.header {
+  position: relative;
+  height: 60px;
+  padding: 0 20px;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  @include for-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    height: 100px;
+  }
+
+  @include for-tablet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  &__title {
+    color: #fff;
+  }
+
+  &_light {
+    background-color: #ffffff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &_dark {
+    background-color: #141414;
+    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
+
+    .header__title {
+      color: #fff;
+    }
+  }
+}

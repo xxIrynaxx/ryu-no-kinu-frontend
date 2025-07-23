@@ -1,0 +1,276 @@
+@use './../../../../styles/breakpoints.scss' as *;
+
+.product {
+  @include for-desktop {
+    position: relative;
+    padding: 60px 100px;
+    background-color: #141414;
+    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
+  }
+
+  &__to-products {
+    @include for-desktop {
+      margin-bottom: 28px;
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: 600;
+      color: #fff;
+      transition: 0.6s ease;
+    }
+
+    &:hover {
+      @include for-desktop {
+        background: linear-gradient(90deg, #ff8a00, #e52e71);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  &__tabs {
+    @include for-desktop {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+  }
+
+  &__character,
+  &__review {
+    @include for-desktop {
+      position: relative;
+      margin-right: 32px;
+      margin-bottom: 28px;
+      border: none;
+      background-color: #141414;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 600;
+      color: #fff;
+      transition: 0.6s ease;
+    }
+    &:hover {
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__card {
+    @include for-desktop {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__image {
+    @include for-desktop {
+      width: 50%;
+      max-width: 400px;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  &__text-block {
+    @include for-desktop {
+      margin-left: 60px;
+    }
+  }
+
+  &__title {
+    @include for-desktop {
+      font-size: 32px;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      line-height: 32px;
+      color: #fff;
+    }
+  }
+
+  &__price {
+    @include for-desktop {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #ffffff;
+    }
+  }
+
+  &__rate {
+    @include for-desktop {
+      display: flex;
+    }
+
+    &-item {
+      @include for-desktop {
+        margin-top: 16px;
+        margin-right: 4px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__country {
+    @include for-desktop {
+      margin-top: 32px;
+      font-size: 16px;
+      line-height: 16px;
+      color: #fff;
+    }
+  }
+
+  &__number {
+    @include for-desktop {
+      margin-top: 12px;
+      font-size: 16px;
+      line-height: 16px;
+      color: #fff;
+    }
+  }
+
+  &__size-title {
+    @include for-desktop {
+      margin-top: 28px;
+      font-size: 16px;
+      line-height: 20px;
+      color: #fff;
+    }
+  }
+
+  &__sizes {
+    @include for-desktop {
+      display: flex;
+      margin-top: 12px;
+    }
+
+    &-item {
+      @include for-desktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 12px;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        border: 1px solid #ffffff50;
+        font-size: 16px;
+        line-height: 16px;
+        color: #ffffff50;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      &:hover {
+        font-size: 20px;
+        line-height: 16px;
+        border: 2px solid #ffffff;
+        color: #ffffff;
+      }
+    }
+  }
+
+  &__buttons {
+    @include for-desktop {
+      display: flex;
+      justify-content: right;
+      margin-top: 20px;
+    }
+  }
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+
+  @include for-desktop {
+    margin-right: 16px;
+  }
+
+  &:nth-last-child(1) {
+    margin: 0;
+  }
+}
+
+.active {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.char-block {
+  @include for-desktop {
+    margin-top: 32px;
+    padding: 16px 20px;
+    border: 1px solid #3d3d3d;
+    border-radius: 16px;
+  }
+
+  &__title {
+    @include for-desktop {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      line-height: 24px;
+      color: #fff;
+    }
+  }
+
+  &__main {
+    @include for-desktop {
+      display: flex;
+      margin-top: 40px;
+      width: 100%;
+    }
+  }
+
+  &__name {
+    @include for-desktop {
+      width: 50%;
+      font-size: 16px;
+      line-height: 16px;
+      color: #fff;
+    }
+
+    &-item {
+      @include for-desktop {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__value {
+    @include for-desktop {
+      width: 50%;
+      font-size: 16px;
+      line-height: 16px;
+      color: #fff;
+    }
+
+    &-item {
+      @include for-desktop {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+.selected {
+  font-size: 20px;
+  line-height: 16px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}

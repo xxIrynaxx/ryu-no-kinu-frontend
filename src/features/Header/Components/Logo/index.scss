@@ -1,0 +1,48 @@
+@use './../../../../styles/breakpoints.scss' as *;
+
+.logo {
+  display: none;
+
+  @include for-desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @include for-tablet {
+    display: flex;
+    align-items: center;
+  }
+
+  &__image {
+    width: 72px;
+    height: 76px;
+
+    @include for-tablet {
+      width: 56px;
+      height: 60px;
+    }
+  }
+
+  &__title {
+    margin-left: 8px;
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 28px;
+
+    @include for-tablet {
+      font-size: 18px;
+      line-height: 18px;
+      max-width: 60px;
+    }
+
+    // &_light {
+    //   color: #3a3a3a;
+    // }
+
+    &_dark {
+      color: #fff;
+    }
+  }
+}
